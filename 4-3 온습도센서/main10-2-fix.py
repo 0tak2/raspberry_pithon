@@ -9,6 +9,12 @@ greenLed = 16
 blueLed = 20
 redLed = 21
 
+GPIO.setwarnings(fasle)
+GPIO.setmode(BCM)
+GPIO.set(greenLed, GPIO.OUT)
+GPIO.set(blueLed, GPIO.OUT)
+GPIO.set(redLed, GPIO.OUT)
+
 try:
     while True:
         humi = dhtDevice.humidity
