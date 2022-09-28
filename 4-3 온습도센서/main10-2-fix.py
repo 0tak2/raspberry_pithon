@@ -14,11 +14,11 @@ try:
         humi = dhtDevice.humidity
         temp = dhtDevice.temperature
         di = (1.8 * temp) - (0.55 * (1 - humi / 100.0) * (1.8 * temp - 26)) + 32
-        print("TEMP: ", tmep)
+        print("TEMP: ", temp)
         print("HUMI: ", humi)
         print("DI: ", di)
 
-        if di<=69:
+        if di <= 69:
             GPIO.output(greenLed, GPIO.HIGH)
             GPIO.output(blueLed, GPIO.LOW)
             GPIO.output(redLed, GPIO.LOW)
