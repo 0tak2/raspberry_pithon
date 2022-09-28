@@ -9,11 +9,11 @@ greenLed = 16
 blueLed = 20
 redLed = 21
 
-GPIO.setwarnings(fasle)
-GPIO.setmode(BCM)
-GPIO.set(greenLed, GPIO.OUT)
-GPIO.set(blueLed, GPIO.OUT)
-GPIO.set(redLed, GPIO.OUT)
+GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(greenLed, GPIO.OUT)
+GPIO.setup(blueLed, GPIO.OUT)
+GPIO.setup(redLed, GPIO.OUT)
 
 try:
     while True:
