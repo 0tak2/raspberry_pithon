@@ -20,9 +20,10 @@ try:
         humi = dhtDevice.humidity
         temp = dhtDevice.temperature
         di = (1.8 * temp) - (0.55 * (1 - humi / 100.0) * (1.8 * temp - 26)) + 32
-        print("TEMP: ", temp)
-        print("HUMI: ", humi)
+        print("TEMP: ", temp, "'C")
+        print("HUMI: ", humi, "%")
         print("DI: ", di)
+        print("")
 
         if di <= 69:
             GPIO.output(greenLed, GPIO.HIGH)
@@ -40,4 +41,7 @@ try:
         time.sleep(1)
 
 except KeyboardInterrupt:
-    pass         
+    print("사용자에 의해 프로그램이 종료되었습니다.")         
+
+finally:
+    GPIO.cleanup()
