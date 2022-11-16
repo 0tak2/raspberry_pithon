@@ -82,10 +82,10 @@ def GPIOLoop(index):
             if pm25_int <= 30:
                 handleLed(0)
                 print(f'- 대기질 좋음')
-            elif pm25_int >= 31 and pm_25_int <= 80:
+            elif pm25_int >= 31 and pm25_int <= 80:
                 handleLed(1)
                 print(f'- 대기질 보통')
-            elif pm25_int >= 81 and pm25 <= 150:
+            elif pm25_int >= 81 and pm25_int <= 150:
                 handleLed(2)
                 print(f'- 대기질 나쁨')
             elif pm25_int >= 151:
