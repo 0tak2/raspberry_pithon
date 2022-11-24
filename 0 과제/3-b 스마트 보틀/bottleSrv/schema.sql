@@ -9,10 +9,10 @@ CREATE TABLE tds (
 
 CREATE TABLE hydration (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  created TIMESTAMP NOT NULL DEFAULT (datetime('now','localtime')),
   differ INTEGER NOT NULL,
   current_vol INTEGER NOT NULL
 );
 
-INSERT INTO hydration (created, differ, current_vol)
-    VALUES ('2022-1-1 12:00:00 +0900', 0, 0)
+INSERT INTO hydration (differ, current_vol)
+    VALUES (0, 0);
